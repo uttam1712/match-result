@@ -3,7 +3,7 @@ import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const BASE_URL = process.env.BASE_URL;
+const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
 
 const defaultFormFields = {
     team1: "",
@@ -23,7 +23,7 @@ const Form = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        await axios.post(`${BASE_URL}`, formFields);
+        await axios.post(`${REACT_APP_BASE_URL}`, formFields);
 
         navigator("/allMatches");
 

@@ -3,7 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import moment from "moment";
 
-const BASE_URL = process.env.BASE_URL;
+const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
 
 const MatchDetail = () => {
     const [matchData, setMatchData] = useState({});
@@ -16,7 +16,7 @@ const MatchDetail = () => {
     const { id } = useParams();
 
     const fetchMatchData = async () => {
-        const { data } = await axios.get(`${BASE_URL}/${id}`);
+        const { data } = await axios.get(`${REACT_APP_BASE_URL}/${id}`);
 
         setMatchData(data.match);
     };
@@ -25,7 +25,7 @@ const MatchDetail = () => {
         const ans = window.confirm("Are you sure want to delete this match ?");
 
         if (ans) {
-            await axios.delete(`${BASE_URL}/${id}`);
+            await axios.delete(`${REACT_APP_BASE_URL}/${id}`);
             alert(`${team1} vs ${team2} match deleted`);
             navigator(-1);
         }

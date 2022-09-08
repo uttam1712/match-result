@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import moment from "moment";
 
-const BASE_URL = process.env.BASE_URL;
+const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
 
 const EditForm = () => {
     const [formFields, setFormFields] = useState({});
@@ -16,7 +16,7 @@ const EditForm = () => {
     const { id } = useParams();
 
     const fetchMatchData = async () => {
-        const { data } = await axios.get(`${BASE_URL}/${id}`);
+        const { data } = await axios.get(`${REACT_APP_BASE_URL}/${id}`);
 
         let { date } = data.match;
         date = moment(date).format("YYYY-MM-DD");
@@ -31,7 +31,7 @@ const EditForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        await axios.patch(`${BASE_URL}/${id}`, formFields);
+        await axios.patch(`${REACT_APP_BASE_URL}/${id}`, formFields);
 
         alert(`${team1} vs ${team2} match updated`);
 

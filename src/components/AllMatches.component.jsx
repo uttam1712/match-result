@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 import Match from "./Match.component";
 import axios from "axios";
 
-const BASE_URL = process.env.BASE_URL;
+const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
 
 const AllMatches = () => {
     const [matchList, setMatchList] = useState([]);
 
     const fetchMatch = async () => {
-        const { data } = await axios.get(`${BASE_URL}`);
+        const { data } = await axios.get(`${REACT_APP_BASE_URL}`);
         setMatchList(data.matches);
     };
 

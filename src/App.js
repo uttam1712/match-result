@@ -1,5 +1,4 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
 import AllMatches from "./components/AllMatches.component";
 import Form from "./components/Form.component";
 import Home from "./components/home.component";
