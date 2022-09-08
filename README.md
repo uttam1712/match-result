@@ -1,6 +1,6 @@
 # `Live project link 🔗`
 
-## [https://match-result-uttam1712.vercel.app/]('https://match-result-uttam1712.vercel.app/)
+## [https://match-result-uttam1712.vercel.app/](https://match-result-uttam1712.vercel.app/)
 
 # `Home page`
 
